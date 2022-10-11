@@ -1,0 +1,50 @@
+<!<!DOCTYPE html>
+<html>
+    <head>
+        <title>Latihan 3 Menampilkan Tooltip dan Poopup</title>
+        <link rel="stylesheet" href="leaflet.css"/>
+        <script src="leaflet.js"></script>
+    </head>
+    <body>
+        <div id='mapku' style="width: 100%; height: 600px;"></div>
+    </body>
+    <script type="text/javascript">
+        var mymap = L.map('mapku').setView([-0.9142997125961476,100.46607589539128], 13);
+        
+        var tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+		maxZoom: 19,
+		attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+	    }).addTo(mymap);
+        
+        L.marker([-0.9142997125961476,100.46607589539128]).bindTooltip("1.pnp").addTo(mymap),
+        L.marker([-0.9195085574967158, 100.45602366134682]).bindTooltip("3.Rumah sakit andalas").addTo(mymap),
+        L.marker([-0.9171664215940202, 100.45345841328732]).bindTooltip("4.Asrama Unand").addTo(mymap),
+        L.marker([-0.9237550714577452, 100.4451955659061]).bindTooltip("6.Mesjid As-syuhada").addTo(mymap),
+        L.marker([-0.9183592503873796, 100.45732989244514]).bindTooltip("2.Fakultas Kedokteran Unand").addTo(mymap),
+        L.marker([-0.9229221702096438, 100.4484500552563]).bindPopup("5.Gerbang Utama Unand").addTo(mymap),
+        L.marker([-0.9233922855781846, 100.44402630789297]).bindPopup("8.Warung Tunggal Putri").addTo(mymap),
+        L.marker([-0.9240144771868124, 100.44037850400309]).bindPopup("10.CLAYTON CAFE & RESTO").addTo(mymap),
+        L.marker([-0.9233708306773853, 100.44364007023981]).bindPopup("9.pondok aciak jaya").addTo(mymap),
+        L.marker([-0.9237379162205543, 100.44457416444494]).bindPopup("7.Bank BRI kk unand").addTo(mymap);
+
+        var Perjalanan = [
+            // tempat 1
+            [
+                [-0.913876846931385, 100.46602740479331],
+                [-0.9146946523918321, 100.46456968934223],
+                [-0.9147421453794184, 100.4630972191448],
+                [-0.9152883146915104, 100.46226598596884],
+                [-0.9171642869122666, 100.46195724221778],
+                [-0.9180785261825846, 100.46150600135083],
+                [-0.9188176084151475, 100.4606241466015],
+                [-0.9190774421845105, 100.45952280473706],
+                [-0.9188052353780446, 100.45848333601104],
+                [-0.918409298167969, 100.45746861654041],
+                [-0.9183979751626237, 100.45727044217301],
+                
+            ]
+        ];
+
+        L.polyline(Perjalanan).addTo(mymap);
+    </script>
+</html>
